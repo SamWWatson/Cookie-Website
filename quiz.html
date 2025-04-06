@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Assessment Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General page styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header styling */
+    .header {
+      background: linear-gradient(to right, #4CAF50, #2E7D32);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navigation bar styling */
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .nav__list {
+      list-style: none;
+      padding: 0;
+    }
+    .nav__item {
+      display: inline;
+      margin: 0 15px;
+    }
+    .nav__link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease-in-out;
+    }
+    .nav__link:hover {
+      color: #FFD700;
+    }
+
+    /* Main content container */
+    .main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Styling for each question */
+    .question {
+      margin-bottom: 20px;
+    }
+
+    /* Results display section */
+    .results {
+      margin-top: 20px;
+      background-color: #e2f0d9;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    /* Button styling */
+    .btn {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Animation for fade-in effect */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header class="header">
+    <h1>Self-Assessment Quiz</h1>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+		<li class="nav__item"><a href="types.html" class="nav__link">Types of Cookies</a></li>
+        <li class="nav__item"><a href="security.html" class="nav__link">Cookie Security</a></li>
+        <li class="nav__item"><a href="references.html" class="nav__link">References</a></li>
+        <li class="nav__item"><a href="quiz.html" class="nav__link">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content with quiz form -->
+  <main class="main">
+    <form id="quizForm">
+      <!-- Multiple-choice question 1 -->
+      <div class="question">
+        <label>1. What is the primary purpose of an internet cookie?</label><br>
+        <input type="radio" name="q1" value="a"> A) To speed up your internet connection<br>
+        <input type="radio" name="q1" value="b"> B) To store data about a user’s browsing activity<br>
+        <input type="radio" name="q1" value="c"> C) To protect your computer from viruses<br>
+        <input type="radio" name="q1" value="d"> D) To make websites look better<br>
+      </div>
+
+      <!-- Multiple-choice question 2 -->
+      <div class="question">
+        <label>2. Which type of cookie is stored only while the user is on a specific website and deleted afterward?</label><br>
+        <input type="radio" name="q2" value="a"> A) Persistent Cookie<br>
+        <input type="radio" name="q2" value="b"> B) Zombie Cookie<br>
+        <input type="radio" name="q2" value="c"> C) Session Cookie<br>
+        <input type="radio" name="q2" value="d"> D) Flash Cookie<br>
+      </div>
+
+      <!-- Multiple-choice question 3 -->
+      <div class="question">
+        <label>3. What information can a cookie typically store?</label><br>
+        <input type="radio" name="q3" value="a"> A) Your IP address and internet provider<br>
+        <input type="radio" name="q3" value="b"> B) Passwords in plain text<br>
+        <input type="radio" name="q3" value="c"> C) User preferences and login status<br>
+        <input type="radio" name="q3" value="d"> D) Your entire browser history<br>
+      </div>
+
+      <!-- Fill-in-the-blank question 4 -->
+      <div class="question">
+        <label>4. A cookie that remains on your device after closing the browser and helps websites remember you for future visits is called a __________ cookie.</label><br>
+        <input type="text" name="q4">
+      </div>
+
+      <!-- Multiple-select question 5 -->
+      <div class="question">
+        <label>5. Which of the following are potential privacy concerns associated with internet cookies? (Select all that apply)</label><br>
+        <input type="checkbox" name="q5" value="a"> A) Tracking user behavior across websites<br>
+        <input type="checkbox" name="q5" value="b"> B) Automatically updating your software<br>
+        <input type="checkbox" name="q5" value="c"> C) Collecting data without user knowledge<br>
+        <input type="checkbox" name="q5" value="d"> D) Logging into secure networks<br>
+      </div>
+
+      <!-- Submit and Restart buttons -->
+      <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
+      <button type="button" class="btn" onclick="restartQuiz()">Restart</button>
+    </form>
+
+    <!-- Div to display results -->
+    <div class="results" id="results"></div>
+  </main>
+
+  <!-- Page footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Web Technology Quiz Project</p>
+  </footer>
+
+  <script>
+    // Function to evaluate and display quiz results
+    function submitQuiz() {
+      let score = 0;
+      const results = document.getElementById("results");
+      results.innerHTML = "<h2>Results:</h2>";
+
+      // Check answer for question 1
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === "b") score++;
+      results.innerHTML += `<p>Q1: ${q1 ? q1.value : 'No answer'} - Correct: b</p>`;
+
+      // Check answer for question 2
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === "c") score++;
+      results.innerHTML += `<p>Q2: ${q2 ? q2.value : 'No answer'} - Correct: c</p>`;
+
+      // Check answer for question 3
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === "c") score++;
+      results.innerHTML += `<p>Q3: ${q3 ? q3.value : 'No answer'} - Correct: c</p>`;
+
+      // Check answer for question 4 (fill in the blank)
+      const q4 = document.querySelector('input[name="q4"]').value.trim().toLowerCase();
+      if (q4 === "persistent") score++;
+      results.innerHTML += `<p>Q4: ${q4} - Correct: persistent</p>`;
+
+      // Check answers for question 5 (multiple answers)
+      const q5 = document.querySelectorAll('input[name="q5"]:checked');
+      const q5Values = Array.from(q5).map(cb => cb.value);
+      const correctQ5 = ["a", "c"];
+      const allCorrect = correctQ5.every(val => q5Values.includes(val)) && q5Values.length === correctQ5.length;
+      if (allCorrect) score++;
+      results.innerHTML += `<p>Q5: ${q5Values.join(", ")} - Correct: a, c</p>`;
+
+      // Display total score and pass/fail status
+      results.innerHTML += `<h3>Total Score: ${score}/5</h3>`;
+      results.innerHTML += `<h3>${score >= 3 ? "Pass" : "Fail"}</h3>`;
+    }
+
+    // Function to reset quiz form and results
+    function restartQuiz() {
+      document.getElementById("quizForm").reset();
+      document.getElementById("results").innerHTML = "";
+    }
+  </script>
+</body>
+</html>

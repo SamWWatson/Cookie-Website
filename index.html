@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Assessment Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    .header {
+      background: linear-gradient(to right, #4CAF50, #2E7D32);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .nav__list {
+      list-style: none;
+      padding: 0;
+    }
+    .nav__item {
+      display: inline;
+      margin: 0 15px;
+    }
+    .nav__link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease-in-out;
+    }
+    .nav__link:hover {
+      color: #FFD700;
+    }
+    .main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .results {
+      margin-top: 20px;
+      background-color: #e2f0d9;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Cookies: Home</h1>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="types.html" class="nav__link">Types of Cookies</a></li>
+        <li class="nav__item"><a href="security.html" class="nav__link">Cookie Security</a></li>
+        <li class="nav__item"><a href="references.html" class="nav__link">References</a></li>
+        <li class="nav__item"><a href="quiz.html" class="nav__link">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- Main content area -->
+    <main class="main">
+            <h2 class="section__title">Executive Summary</h2>
+            <p class="section__content">Cookies are small data files stored on a user's device to improve website functionality, user experience, and security. They help in remembering preferences, session management, and analytics tracking.</p>
+        </section>
+		        <!-- Section for table of contents -->
+        <section class="section">
+            <h2 class="section__title">Table of Contents</h2>
+            <ul class="section__content">
+                <li><a href="types.html">Types of Cookies</a></li>
+                <li><a href="security.html">Cookie Security</a></li>
+                <li><a href="references.html">References & Resources</a></li>
+            </ul>
+        </section>
+        <!-- Section for key terms -->
+        <section class="section">
+            <h2 class="section__title">Key Terms</h2>
+            <ul class="section__content">
+                <li><strong>Session Cookies:</strong> Temporary cookies erased when the browser is closed.</li>
+                <li><strong>Persistent Cookies:</strong> Remain on the device for a set duration.</li>
+                <li><strong>First-Party Cookies:</strong> Created by the website being visited.</li>
+                <li><strong>Third-Party Cookies:</strong> Created by external services for tracking and advertising.</li>
+                <li><strong>Secure Cookies:</strong> Transmitted only via HTTPS.</li>
+                <li><strong>HTTP-Only Cookies:</strong> Not accessible via JavaScript.</li>
+            </ul>
+        </section>
+    <!-- Footer section -->
+    <footer class="footer">
+        <p>&copy; 2025 Cookies Web Project</p>
+    </footer>
+</body>
+</html>
