@@ -16,7 +16,7 @@
             color: #333;
             line-height: 1.6;
         }
-        
+
         /* BEM Styles */
         .header {
             background: linear-gradient(to right, #4CAF50, #2E7D32);
@@ -25,26 +25,29 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .nav {
             text-align: center;
             padding: 10px 0;
-        list-style: none;
-            padding: 0;
+            list-style: none;
         }
+
         .nav__item {
             display: inline;
             margin: 0 15px;
         }
+
         .nav__link {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
             transition: color 0.3s ease-in-out;
         }
+
         .nav__link:hover {
             color: #FFD700;
         }
-        
+
         .main {
             max-width: 900px;
             margin: 30px auto;
@@ -54,21 +57,27 @@
             border-radius: 10px;
             animation: fadeIn 1s ease-in-out;
         }
-        
+
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
+
         .section__title {
             font-size: 1.8rem;
             color: #4CAF50;
             border-bottom: 3px solid #4CAF50;
             padding-bottom: 5px;
         }
+
         .section__content {
             font-size: 1.1rem;
-			color: black;
+            color: black;
         }
-        
+
+        .section__content ul {
+            margin-left: 20px;
+        }
+
         .footer {
             text-align: center;
             padding: 15px;
@@ -76,7 +85,7 @@
             color: white;
             margin-top: 30px;
         }
-        
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
@@ -94,23 +103,62 @@
                 <li class="nav__item"><a href="types.html" class="nav__link">Types of Cookies</a></li>
                 <li class="nav__item"><a href="security.html" class="nav__link">Cookie Security</a></li>
                 <li class="nav__item"><a href="references.html" class="nav__link">References</a></li>
-				<li class="nav__item"><a href="quiz.html" class="nav__link">Quiz</a></li>
+                <li class="nav__item"><a href="quiz.html" class="nav__link">Quiz</a></li>
             </ul>
+        </nav>
+    </header>
+
     <!-- Main content area -->
     <main class="main">
-        <!-- Section for key terms -->
+        <!-- Section for detailed cookie types -->
         <section class="section">
-            <h2 class="section__title">Key Terms</h2>
-            <ul class="section__content">
-                <li><strong>Session Cookies:</strong> Temporary cookies erased when the browser is closed.</li>
-                <li><strong>Persistent Cookies:</strong> Remain on the device for a set duration.</li>
-                <li><strong>First-Party Cookies:</strong> Created by the website being visited.</li>
-                <li><strong>Third-Party Cookies:</strong> Created by external services for tracking and advertising.</li>
-                <li><strong>Secure Cookies:</strong> Transmitted only via HTTPS.</li>
-                <li><strong>HTTP-Only Cookies:</strong> Not accessible via JavaScript.</li>
-            </ul>
+            <h2 class="section__title">Detailed Cookie Types</h2>
+            <div class="section__content">
+                <h3>Session Cookies</h3>
+                <p>Temporary cookies that are only active during a single browsing session. They are deleted automatically once the browser is closed.</p>
+                <ul>
+                    <li>Keeping a user logged in during a session</li>
+                    <li>Storing temporary form input to avoid loss on accidental page refresh</li>
+                </ul>
+
+                <h3>Persistent Cookies</h3>
+                <p>Cookies that are stored on the user's device for a defined period.</p>
+                <ul>
+                    <li>"Remember me" logins or auto-login</li>
+                    <li>Saving user preferences like languages and themes</li>
+                </ul>
+
+                <h3>First-Party Cookies</h3>
+                <p>Cookies set by the website the user is directly visiting.</p>
+                <ul>
+                    <li>User authentication</li>
+                    <li>Saving site preferences and personalization</li>
+                </ul>
+
+                <h3>Third-Party Cookies</h3>
+                <p>Cookies created by external domains that are embedded on the visited website via ads or plugins.</p>
+                <ul>
+                    <li>Cross-site user tracking</li>
+                    <li>Targeted advertising and retargeting</li>
+                </ul>
+
+                <h3>Secure Cookies</h3>
+                <p>Cookies marked with the Secure attribute, meaning they are only transmitted over HTTPS connections.</p>
+                <ul>
+                    <li>Protecting session data from man-in-the-middle attacks</li>
+                    <li>Helps prevent interception of cookie data during transmission</li>
+                </ul>
+
+                <h3>HTTP-Only Cookies</h3>
+                <p>Cookies marked with the HttpOnly flag are inaccessible to JavaScript and only used in HTTP requests.</p>
+                <ul>
+                    <li>Storing session tokens and sensitive identifiers</li>
+                    <li>Often paired with Secure for safer cookies</li>
+                </ul>
+            </div>
         </section>
     </main>
+
     <!-- Footer section -->
     <footer class="footer">
         <p>&copy; 2025 Cookies Web Project</p>
