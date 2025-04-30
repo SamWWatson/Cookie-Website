@@ -103,9 +103,17 @@
     <main class="main">
         <!-- Section for cookie security information -->
         <section class="section">
-            <h2 class="section__title">Cookie Security</h2>
-            <p class="section__content">Internet cookies, while essential for enhancing user experience and session management, can pose security risks if not properly managed. Common threats include cross-site scripting, where attackers inject malicious scripts to steal cookies, and cross-site request forgery, which exploits a user's authenticated session. You can limit attacks by using practices such as setting the HttpOnly and Secure flags and encrypting cookie data help protect against unauthorized access and attacks.</p>
-        </section>
+    <h2 class="section__title">Cookie Security</h2>
+    <div class="section__content">
+        <p>Cookies play an important role in web functionality by storing data like login sessions and user preferences. While they enhance user experience, cookies also present a range of security risks. Understanding how cookies can be exploited and how to secure them is crucial for protecting users and web applications.</p>
+
+        <p>One major threat to cookie security is Cross-Site Scripting, where attackers put malicious scripts into a website to steal cookies if they're accessible with JavaScript. This risk can be decreased by applying the HttpOnly flag, which makes cookies inaccessible to scripts. Another threat is Cross-Site Request Forgery, which tricks users into executing unwanted actions while being authenticated. This often exploits session cookies and the most effective way to stop these attacks is to change the way that applications manage cookies.</p>
+
+        <p>To increase security, cookies should be marked with proper attributes. The Secure flag ensures cookies are only transmitted over HTTPS. Which reduces the chance of interception on unsecured networks. The Same Site attribute limits cross-site cookie sharing and helps block unwanted requests from third-party sources. Setting appropriate expiration times and avoiding sensitive information within cookies are both beneficial practices.</p>
+
+        <p>As privacy regulations and browser standards evolve, developers must remain vigilant in their cookie management strategies. Most modern browsers now default to stricter cookie handling, such as enforcing Same Site=Lax. By combining technical safeguards with secure development practices, websites can effectively protect cookie data and maintain trust with their users.</p>
+    </div>
+</section>
     </main>
     <!-- Footer section -->
     <footer class="footer">
